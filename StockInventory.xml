@@ -1,2 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="StockInventory.xsl"?>
+<stockitems>
+    <section name = "hardware">
+        <item>
+            <name>Seagate 2 TB BarraCuda 3.5 Inch</name>
+            <price>54.99</price>
+            <units>54</units>
+            <type>hardrive</type>
+        </item>
+        <item>
+            <name>MENGMI Internal SSD 240GB 2.5 inch</name>
+            <price>24.99</price>
+            <units>80</units>
+            <type>hardrive</type>
+        </item>
+        <item>
+            <name>Crucial BX500 CT120BX500SSD1 120 GB</name>
+            <price>19.99</price>
+            <units>32</units>
+            <type>hardrive</type>
+        </item>
+        <item>
+            <name>Samsung 860 EVO 500 GB SATA 2.5"</name>
+            <price>70.99</price>
+            <units>25</units>
+            <type>hardrive</type>
+        </item>
+        <item>
+            <name>Samsung 860 EVO 500 GB SATA 2.5"</name>
+            <price>70.99</price>
+            <units>25</units>
+            <type>hardrive</type>
+        </item>
+        <item>
+            <name>IN4V8GNDLRI 8GB Laptop RAM Module DDR4 2400MHz</name>
+            <price>32.50</price>
+            <units>33</units>
+            <type>Memory RAM</type>
+        </item>
+        <item>
+            <name>Timetec Hynix IC 32GB Kit (2x16GB) DDR4 2133MHz</name>
+            <price>120.99</price>
+            <units>15</units>
+            <type>Memory RAM</type>
+        </item>
+        <item>
+            <name>Corsair CMK16GX4M2B3200C16 Vengeance LPX 16 GB</name>
+            <price>74.20</price>
+            <units>48</units>
+            <type>Memory RAM</type>
+        </item>
+        <item>
+            <name>HyperX HX432C16PB3K2/16 Predator DDR4 16 GB</name>
+            <price>76.80</price>
+            <units>51</units>
+            <type>Memory RAM</type>
+        </item>
+        <item>
+            <name>Capture Card，USB 3.0 HDMI HD Video Capture Card 1080P</name>
+            <price>85.99</price>
+            <units>36</units>
+            <type>Video Card</type>
+        </item>
+        <item>
+            <name>Gigabyte GeForce GTX 1050 Ti OC Low Profile 4G GeForce </name>
+            <price>125.98</price>
+            <units>92</units>
+            <type>Video Card</type>
+        </item>
+    </section>
+    <section name = "Software">
+        <item>
+            <name>Microsoft Office 365 Home, up to 6 users, 1 year, PC/Mac </name>
+            <price>49.15</price>
+            <units>104</units>
+            <type>Operating System</type>
+        </item>
+        <item>
+            <name>Adobe Photoshop Elements 2020</name>
+            <price>84.22</price>
+            <units>38</units>
+            <type>Utility</type>
+        </item>
+        <item>
+            <name>McAfee Total Protection 2020, 10 Devices</name>
+            <price>13.49</price>
+            <units>60</units>
+            <type>Utility</type>
+        </item>
+        <item>
+            <name>Kaspersky Internet Security 2020, 3 Devices, 1 Year</name>
+            <price>13.49</price>
+            <units>60</units>
+            <type>Utility</type>
+        </item>
+    </section>    
+</stockitems>
