@@ -4,12 +4,10 @@
         <html>
             <head>
                 <title>Stock's Inventory - Total PC</title>
-                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>                
-                <script src="app.js"></script>                
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>                                            
             </head>
             <body>
-                <h2>
-                    <img src="javaco_tea_logo.gif" alt="Javaco Tea Logo" width="58" height="100" />Total PC - Stock Control</h2>
+                <h2>Total PC - Stock Control</h2>
                 <p>Table</p>
                 <table border="1" class="indent">
                     <thead>
@@ -57,7 +55,7 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
-            </body>>
+            </body>
         </html>
     </xsl:template>
 </xsl:stylesheet>
