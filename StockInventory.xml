@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="StockInventory.xsl"?>
 <stockitems>
-    <section name = "hardware">
+    <section name = "Hardware">
         <item>
             <name>Seagate 2 TB BarraCuda 3.5 Inch</name>
             <type>Hardrive</type>
