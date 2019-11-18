@@ -17,7 +17,7 @@
             <style type="text/css">	
             body {
                 color: #566787;
-                background: #e0f7fa;               
+                background: #5F9EA0;               
                 font-family: 'Varela Round', sans-serif;
                 font-size: 13px;
             }
@@ -78,7 +78,7 @@
                 background-color: #fcfcfc;
             }
             table.table-striped.table-hover tbody tr:hover {
-                background: #f5f5f5;
+                background: #68a0b0;
             }
             table.table th i {
                 font-size: 13px;
@@ -255,8 +255,8 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span></button>
                 </nav>
-            <main role="main" class="container-fluid">
-                <div class="container-fluid bg-info">
+            <main role="main" class="container">
+                <div class="container bg-info">
                     <div class="table-wrapper">
                         <div class="table-title bg-dark">
                             <div class="row">
@@ -269,7 +269,12 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th colspan="3">Stock Items</th>
+                                        <th colspan="3">Total Items</th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" align="center">
+                                            <b><h3><xsl:value-of select="/stockitems/section/@name" /></h3></b>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Name</th>
@@ -282,11 +287,7 @@
                                 </thead>
                                 <tbody>
                                     <xsl:for-each select="/stockitems/section"> 
-                                        <tr>
-                                            <td colspan="3">
-                                                <xsl:value-of select="@name" />
-                                            </td>
-                                        </tr>
+                                        
                                         <xsl:for-each select="item">
                                             <tr>                                  
                                                 <td align="left">
