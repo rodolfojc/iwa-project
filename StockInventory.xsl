@@ -247,7 +247,7 @@
             .modal form label {
                 font-weight: normal;
             }
-</style>
+            </style>
             </head>
             <body>
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -266,7 +266,7 @@
                             </div>				
                         </div>                                        
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id = "stocktable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th colspan="3">Total Items</th>

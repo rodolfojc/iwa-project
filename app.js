@@ -13,9 +13,13 @@ var http = require('http'),
 var router = express();
 var server = http.createServer(router);
 
+router.get('/', function(req, res) {
+    res.render('index');
+});
+
 router.use(express.static(path.resolve(__dirname, 'views')));
 
-router.get('/', function(req, res) {
+router.get('/get/stockitems', function(req, res) {
 
     res.writeHead(200, {'Content-Type':'text/html'});
 
