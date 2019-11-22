@@ -10,7 +10,7 @@ function draw_table(){
             }
         });
     };
-    $.getJSONuncached("/get/stocktable")
+    $.getJSONuncached("/get/stockitems")
 }
 $(document).ready(function(){
     draw_table();
