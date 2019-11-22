@@ -2,6 +2,8 @@
 var http = require('http'),
     // ROUTING
     express = require('express'),
+    // PATH DEPENDENCY
+    path = require('path'),
     // FILE SYSTEM
     fs = require('fs'),
     // XML PARSE
@@ -13,11 +15,11 @@ var http = require('http'),
 var router = express();
 var server = http.createServer(router);
 
+router.use(express.static(path.resolve(__dirname, 'views')));
+
 router.get('/', function(req, res) {
     res.render('index');
 });
-
-router.use(express.static(path.resolve(__dirname, 'views')));
 
 router.get('/get/stockitems', function(req, res) {
 
