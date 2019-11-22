@@ -249,74 +249,54 @@
             }
             </style>
             </head>
-            <body>
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-	                <a class="navbar-brand mr-auto" href="#">Total PC - Stock Control</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span></button>
-                </nav>
-            <main role="main" class="container">
-                <div class="container bg-info">
-                    <div class="table-wrapper">
-                        <div class="table-title bg-dark">
-                            <div class="row">
-                                <div class="col-sm-6 bg-dark">
-                                    <h2>Inventory - <b>General</b></h2>							
-                                </div>									
-                            </div>				
-                        </div>                                        
-                        <div class="table-responsive">
-                            <table id = "stocktable" class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th colspan="3">Total Items</th>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" align="center">
-                                            <b><h3><xsl:value-of select="/stockitems/section/@name" /></h3></b>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Description</th>
-                                        <th>Provider</th>
-                                        <th>Quantity</th>
-                                        <th>Cost (per/unit)</th>                                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <xsl:for-each select="/stockitems/section"> 
-                                        
-                                        <xsl:for-each select="item">
-                                            <tr>                                  
-                                                <td align="left">
-                                                    <xsl:value-of select="name" />
-                                                </td>
-                                                <td align="left">
-                                                    <xsl:value-of select="type" />
-                                                </td>
-                                                <td align="left">
-                                                    <xsl:value-of select="description" />
-                                                </td>
-                                                <td align="left">
-                                                    <xsl:value-of select="vendor" />
-                                                </td>
-                                                <td align="left">
-                                                    <xsl:value-of select="quantity" />
-                                                </td>
-                                                <td align="left">
-                                                    <xsl:value-of select="cost" />
-                                                </td>                                   
-                                            </tr>
-                                        </xsl:for-each>
+            <body>                
+                <table id = "stocktable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Total Items</th>
+                        </tr>
+                        <tr>
+                            <td colspan="6" align="center">
+                               <b><h3><xsl:value-of select="/stockitems/section/@name" /></h3></b>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Provider</th>
+                                <th>Quantity</th>
+                                <th>Cost (per/unit)</th>                                                        
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <xsl:for-each select="/stockitems/section">                                         
+                                    <xsl:for-each select="item">
+                                        <tr>                                  
+                                            <td align="left">
+                                                <xsl:value-of select="name" />
+                                            </td>
+                                            <td align="left">
+                                                <xsl:value-of select="type" />
+                                            </td>
+                                            <td align="left">
+                                                <xsl:value-of select="description" />
+                                            </td>
+                                            <td align="left">
+                                                <xsl:value-of select="vendor" />
+                                            </td>
+                                            <td align="left">
+                                                <xsl:value-of select="quantity" />
+                                            </td>
+                                            <td align="left">
+                                                <xsl:value-of select="cost" />
+                                            </td>                                   
+                                        </tr>
                                     </xsl:for-each>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </main>
+                                </xsl:for-each>
+                            </tbody>
+                        </table>                        
+            
                 <!-- Bootstrap core JavaScript
                 ================================================== -->
                 <!-- Placed at the end of the document so the pages load faster -->
