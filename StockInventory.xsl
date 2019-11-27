@@ -14,6 +14,7 @@
                     <th>Provider</th>
                     <th>Quantity</th>
                     <th>Cost (per/unit)</th>
+                    <th>Total value</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +45,11 @@
                             </td>
                             <td align="left">
                                 EUR <xsl:value-of select="cost" />
+                            </td>
+                            <td align="left">
+                                <div>
+                                    <xsl:value-of select="/stockitems/section/item/cost * /stockitems/section/item/quantity " />
+                                </div>
                             </td>
                         </tr>
                     </xsl:for-each>
