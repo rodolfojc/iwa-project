@@ -43,7 +43,7 @@
                                 <xsl:value-of select="quantity" />
                             </td>
                             <td align="left">
-                                <xsl:value-of select="cost" />
+                                EUR <xsl:value-of select="cost" />
                             </td>
                         </tr>
                     </xsl:for-each>
