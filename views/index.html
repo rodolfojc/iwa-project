@@ -300,6 +300,10 @@
 		.modal form label {
 			font-weight: normal;
 		}
+
+        .back {
+            padding-top : 15%;
+        }
 	</style>
 
 </head>
@@ -314,8 +318,42 @@
 	</nav>
 
 	<!-- Page Content -->
-
+    
 	<main role="main" class="container">
+    <div class="jumbotron jumbotron-fluid-center">
+        <div class="container">
+            <h3 class="display-5">Stock Item Management</h3>
+            <p class="lead">Add</p>
+            <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Name">
+                </div>
+                <div class="col-auto">
+                <label class="sr-only" for="inlineFormInputGroup">Description</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                    <div class="input-group-text">Description</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+                </div>
+                </div>
+                <div class="col-auto">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                    <label class="form-check-label" for="autoSizingCheck">
+                    Remember me
+                    </label>
+                </div>
+                </div>
+                <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>    
 		<div class="container bg-info">
 			<div class="table-wrapper">
 				<div class="table-title bg-dark">
@@ -329,7 +367,7 @@
 					<div id="stocktable"></div>
 				</div>
 			</div>
-		</div>
+		</div>    
 	</main>
 
 	<!-- Bootstrap core JavaScript -->
