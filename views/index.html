@@ -326,18 +326,17 @@
             <form enctype="application/json" action="/post/json" method="post">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <label>Section</label>
                         <select class="form-control mb-2" name="section_n">
-                            <option value="0">Hardaware</option>
-                            <option value="1">Software</option>
-                            <option value="2">Others</option>                        
+                            <option value="Hardware">Hardware</option>
+                            <option value="Software">Software</option>
+                            <option value="Others">Others</option>                        
                         </select>
                     </div>
-                    <div class="">
+                    <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Name</label>
                         <input type="text" class="form-control mb-2" name ="name" placeholder="Name">
                     </div>
-                    <div class="">
+                    <div class="col-auto">
                         <label class="sr-only" for="inlineFormInput">Type</label>
                         <input type="text" class="form-control mb-2" name ="type" placeholder="Type">
                     </div>                    

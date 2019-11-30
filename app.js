@@ -71,7 +71,9 @@ router.post('/post/json', function(req, res) {
     // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
     xmlFileToJs('StockInventory.xml', function(err, result) {
       if (err) throw (err);
-      result.stockitems.section[obj.section_n].entree.push({'name': obj.name, 'type': obj.type, 'description' : obj.description,
+      console.log(result);
+      console.log(result.stockitems.section[obj.section_n]);
+      result.stockitems.section[obj.section_n].item.push({'name': obj.name, 'type': obj.type, 'description' : obj.description,
       'vendor' : obj.vendor, 'quantity' : obj.quantity, 'cost' : obj.cost});
       console.log(result);
       jsToXmlFile('StockInventory.xml', result, function(err) {
