@@ -317,43 +317,45 @@
         <span class="navbar-toggler-icon"></span></button>
 	</nav>
 
-	<!-- Page Content -->
-    
+	<!-- Page Content -->    
 	<main role="main" class="container-fluid">
     <div class="jumbotron jumbotron-fluid-center">
         <div class="container-fluid">
             <h3 class="display-5">Stock Item Management</h3>
             <p class="lead">Add</p>
-            <form>
-            <div class="form-row align-items-center">
-                <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Name</label>
-                    <input type="text" class="form-control mb-2" placeholder="Name">
+            <form enctype="application/json" action="/post/json" method="post">
+                <div class="form-row align-items-center">
+                    <div class="">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" name ="name" placeholder="Name">
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-control mb-2" name="type_n">
+                            <option value="0">Hardaware</option>
+                            <option value="1">Software</option>
+                            <option value="2">Others</option>                        
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Description</label>
+                        <input type="text" class="form-control mb-2" name="description" placeholder="Description">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Provider</label>
+                        <input type="text" class="form-control mb-2" name = "vendor" placeholder="Vendor">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Quantity</label>
+                        <input type="number" class="form-control mb-2" name= "quantity" placeholder="Quantity">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Cost</label>
+                        <input type="number" class="form-control mb-2" name="cost" placeholder="Cost">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-2">ADD</button>
+                    </div>
                 </div>
-                 <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Type</label>
-                    <input type="text" class="form-control mb-2" placeholder="Type">
-                </div>
-                 <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Description</label>
-                    <input type="text" class="form-control mb-2" placeholder="Description">
-                </div>
-                 <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Provider</label>
-                    <input type="text" class="form-control mb-2" placeholder="Provider">
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Quantity</label>
-                    <input type="number" class="form-control mb-2" placeholder="Quantity">
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Cost</label>
-                    <input type="number" class="form-control mb-2" placeholder="Cost">
-                </div>
-                <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">ADD</button>
-                </div>
-            </div>
             </form>
         </div>
     </div>    

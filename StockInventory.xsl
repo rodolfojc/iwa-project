@@ -11,7 +11,7 @@
                     <th>Name</th>
                     <th>Type</th>
                     <th>Description</th>
-                    <th>Provider</th>
+                    <th>Vendor</th>
                     <th>Quantity</th>
                     <th>Cost (per/unit)</th>                   
                 </tr>
