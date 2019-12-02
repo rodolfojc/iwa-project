@@ -324,9 +324,9 @@
 	</nav>
 
 	<!-- Page Content -->    
-	<main role="main" class="container-fluid">
+	<main role="main" class="container">
     <div class="jumbotron jumbotron-fluid-center">
-        <div class="container-fluid">
+        <div class="container">
             <h3 class="display-5">Stock Item Management</h3>
             <p class="lead">Add</p>
             <form enctype="application/json" action="/post/json" method="post">
@@ -373,9 +373,10 @@
 			<div class="table-wrapper">
 				<div class="table-title bg-dark">
 					<div class="row">
-						<div class="col-sm-6 bg-dark">
+						<div class="col-sm-4 bg-dark">
 							<h2>Inventory - <b>General</b></h2>
                              <button id="delete" class="btn btn-block btn-danger">Delete Item</button>
+                        <!-- <a href="#updateStock" class="btn btn-block btn-info"><span>Update quantity</span></a>--> 
                          <p class="text-muted">To delete an Stock Item, select the Item first!!</p>
 						</div>
                         
@@ -385,7 +386,28 @@
 					<div id="resultable"></div>
 				</div>
 			</div>
-		</div>    
+		</div>
+        <!--
+        <div id="updateStock" class="modal fade">
+		    <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method = 'POST' action = "#" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add - <b>Stock Item</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="hidden" class="form-control" name = "id" id="itemid"  value="" />
+                                <input type="text" class="form-control" name = "name" id = "itemname" value = "" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+		    </div>
+        </div>
+        -->    
 	</main>
 
 	<!-- Bootstrap core JavaScript -->
@@ -393,11 +415,9 @@
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 	</script>
 	<script src="jquery/jquery.min.js"></script>
-	<script src="css/bootstrap.min.js"></script>
+	<script src="css/bootstrap.min.css"></script>
 	<script src="js/table.js"></script>
-    <script src="js/Inventory.js"></script>
-
-
+   
 </body>
 
 </html>
