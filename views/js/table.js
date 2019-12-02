@@ -15,3 +15,4 @@ function draw_table(){
 $(document).ready(function(){
     draw_table();
 })
+

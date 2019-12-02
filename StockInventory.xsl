@@ -26,7 +26,7 @@
                         </b>
                     </td>
                     <xsl:for-each select="item">
-                        <tr>
+                        <tr id="{position()}">
                             <td align="left">
                                 <xsl:value-of select="name" />
                             </td>
