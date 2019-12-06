@@ -9,9 +9,13 @@ var http = require('http'),
     // XML PARSE
     xmlParse = require('xslt-processor').xmlParse,
     // XML PARSE PROCESSOR
-    xsltProcess = require('xslt-processor').xsltProcess;
+    xsltProcess = require('xslt-processor').xsltProcess,
     // XML TO JSON MODULE
     xml2js = require('xml2js');
+
+    // SANATAIZER
+const expAutoSan = require('express-autosanitizer');
+    
 
 // CREATING SERVER
 var router = express();
@@ -20,6 +24,9 @@ var server = http.createServer(router);
 router.use(express.static(path.resolve(__dirname, 'views')));
 router.use(express.urlencoded({extended: true}));
 router.use(express.json());
+
+// MOUNT SANATAIZER
+router.use(expAutoSan.all);
 
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {

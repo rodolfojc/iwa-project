@@ -45,7 +45,12 @@ function delete_row(sec, item)
 	})
 };
 
-
 $(document).ready(function(){
     draw_table();
 })
+
+$(document).ready(function() {
+    $("#addnew").click(function() {
+	$("#formhidden").toggle();
+  })
+});
