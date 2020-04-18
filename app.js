@@ -5,7 +5,8 @@ var logger = require("morgan"),
     http = require("http"),
     express = require("express"),
     bodyParser = require("body-parser"),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    path = require('path');
 
 var app = express();
 var port = 3000;
@@ -13,6 +14,12 @@ var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(require('./routes/itemsRoutes'));
+app.use(express.static(path.resolve(__dirname, 'views')));
+
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 app.listen(port, function(err){
     console.log("Listening on Port: " + port)
