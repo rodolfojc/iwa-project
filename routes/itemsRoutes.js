@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router();
-    //userCtrl = require('./user-controller');
+    itemController = require('../controllers/itemController');
 
 router.post('/iteam', itemController.createItem);
 router.get('/iteam', itemController.getItem);
