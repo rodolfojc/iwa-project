@@ -9,10 +9,7 @@ const itemsSchema = mongoose.Schema({
     },
     type: {
         type: String,
-    },
-    description: {
-        type: String,
-    },
+    },    
     description: {
         type: String,
     },
