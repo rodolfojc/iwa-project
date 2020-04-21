@@ -68,8 +68,6 @@ function select_row()
 	{
        	$(".selected").removeClass("selected");
 		$(this).addClass("selected");
-        //var section = $(this).prevAll("tr").children("td[colspan='6']").length - 1;
-        //console.log(section);
         var item = $(this).attr("id");
         console.log(item);
         delete_row(item);

@@ -6,7 +6,7 @@ exports.createItem = function(req, res) {
         if (err) { 
             res.status(400).json(err);
         }
-        res.json(user); 
+        res.render('index'); 
 });
 };
 

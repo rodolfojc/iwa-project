@@ -8,6 +8,9 @@ var logger = require("morgan"),
     mongoose = require('mongoose'),
     path = require('path');
 
+    // SANATAIZER
+const expAutoSan = require('express-autosanitizer');
+
 var app = express();
 var port = 3000;
 var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/test?retryWrites=true&w=majority';
@@ -16,6 +19,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(require('./routes/itemsRoutes'));
 app.use(express.static(path.resolve(__dirname, 'views')));
+
+// MOUNT SANATAIZER
+app.use(expAutoSan.all);
 
 app.get('/', (req, res) => {
     res.render('index');
