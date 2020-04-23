@@ -8,9 +8,11 @@ var logger = require("morgan"),
     mongoose = require('mongoose'),
     path = require('path');
 
+require('dotenv').config();
+
 var app = express();
 var port = 3000;
-var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/test?retryWrites=true&w=majority';
+//var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/test?retryWrites=true&w=majority';
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -25,7 +27,8 @@ app.listen(port, function(err){
     console.log("Listening on Port: " + port)
 });
 
-mongoose.connect(mongoInstance);
+mongoose.connect(process.env.MONGODB_URL);
+//mongoose.connect(mongoInstance);
 mongoose.connection.on('error', (err) => { 
     console.log('Mongodb Error: ', err); 
     process.exit();
