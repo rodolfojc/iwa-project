@@ -2,12 +2,11 @@ var Item = require('../models/Items');
 
 exports.createItem = function(req, res) { 
     var newItem = new Item(req.body);
-    console.log(newItem);
-    newItem.save(function (err, user) { 
+    newItem.save(function (err, item) { 
         if (err) { 
             res.status(400).json(err);
         }
-        res.send(newItem); 
+        res.send(item);
 });
 };
 

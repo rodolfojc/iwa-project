@@ -16,6 +16,7 @@ var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('./routes/itemsRoutes'));
 app.use(express.static(path.resolve(__dirname, 'views')));
 
