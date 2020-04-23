@@ -1,9 +1,8 @@
     
 var logger = require("morgan"),
-    http = require('http'),
     express = require('express'),
     http = require("http"),
-    express = require("express"),
+    cors = require("cors"),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
     path = require('path');
