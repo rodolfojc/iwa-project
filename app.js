@@ -9,12 +9,11 @@ var logger = require("morgan"),
 
 require('dotenv').config();
 
-    // SANATAIZER
+// SANATAIZER
 const expAutoSan = require('express-autosanitizer');
 
 var app = express();
-var port = process.env.PORT || 3000;;
-//var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/test?retryWrites=true&w=majority';
+var port = process.env.PORT || 3000;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
