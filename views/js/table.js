@@ -69,11 +69,12 @@ function select_row()
 		$(this).addClass("selected");
         var item = $(this).attr("id");
         console.log(item);
-        delete_row(item);
+        deleteItem(item);
+        editItem(item);
 	})
 };
 
-function delete_row(item)
+function deleteItem(item)
 {
 	$("#delete").click(function ()
 	{
@@ -90,12 +91,28 @@ function delete_row(item)
 	})
 };
 
+function editItem(item)
+{
+	$("#editSubmit").click(function ()
+	{
+		$.ajax(
+		{
+			url: `/item/${item}`,
+			type: "PUT",
+			data: {},
+			cache: false,
+			success: function (json) {
+                location.reload(true);
+            }
+		})
+	})
+};
+
 function validateForm () {
     };
 
 $(document).ready(function(){
     draw_table();
-    //validateForm();
 });
 
 $(document).ready(function() {

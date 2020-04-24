@@ -11,7 +11,11 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/inventory.css" rel="stylesheet">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link href="css/inventory.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -87,6 +91,11 @@
 								</div>
 							</form>
 						</div>
+                        <div class="col-sm-4 bg-dark">
+							<h2>Stock Item - <b>Edit</b></h2>
+							<button id="edit" data-toggle="modal" data-target="#updateStock" class="btn btn-block btn-success">Edit Item</button>							
+							<p class="text-muted">To delete an Stock Item, select the Item first!!</p>
+						</div>
 					</div>
 				</div>
 				<div class="table-responsive">
@@ -94,11 +103,11 @@
 				</div>
 			</div>
 		</div>
-		<!-- EDIT QUANTITY
+		<!-- EDIT QUANTITY -->
         <div id="updateStock" class="modal fade">
 		    <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method = 'POST' action = "#" >
+                    <form method = 'PUT' action = "/item" >
                         <div class="modal-header">
                             <h4 class="modal-title">EDIT - <b>Stock Item</b></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -109,12 +118,13 @@
                                 <input type="hidden" class="form-control" name = "id" id="quantity"  value="" />
                                 <input type="text" class="form-control" name = "quantity" id = "quantity" value = "" required>
                             </div>
+                            <button id="editSubmit" class="btn btn-block btn-success">Edit Item</button>	
                         </div>
                     </form>
                 </div>
 		    </div>
         </div>
-        -->
+        
 	</main>
 
 	<!-- Bootstrap core JavaScript -->
@@ -122,7 +132,7 @@
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 	</script>
 	<script src="jquery/jquery.min.js"></script>
-	<script src="css/bootstrap.min.css"></script>
+	<script src="css/bootstrap.css"></script>
 	<script src="js/table.js"></script>
     <script src="js/json2html.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
