@@ -13,7 +13,7 @@ require('dotenv').config();
 const expAutoSan = require('express-autosanitizer');
 
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;;
 //var mongoInstance = 'mongodb+srv://rodolfojc:rodolfo@cluster0-eyxy6.mongodb.net/test?retryWrites=true&w=majority';
 
 app.use(logger('dev'));
