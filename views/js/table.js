@@ -68,7 +68,7 @@ function select_row()
 		$(this).addClass("selected");
         var item = $(this).attr("id");
         console.log(item);
-        //delete_row(item);
+        delete_row(item);
 	})
 };
 
