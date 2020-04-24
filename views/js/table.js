@@ -6,12 +6,58 @@ function draw_table(){
             type: 'GET',
             cache: false,
             success: function(html) {
-                $("#resultable").append(html);
+                let result = '';
+                let body = `<table id="stocktable" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Total Items</th>
+                                </tr>                                <tr></tr>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Vendor</th>
+                                    <th>Quantity</th>
+                                    <th>Cost (per/unit)</th>                   
+                                </tr>
+                            </thead>
+                            <tbody>`;
+                let hardware = `<td colspan="6" align="center">
+                                    <b>
+                                        <h1>Hardware</h1>
+                                    </b>
+                                </td>`;
+                let software = `<td colspan="6" align="center">
+                                    <b>
+                                        <h1>Software</h1>
+                                    </b>
+                                </td>`;
+                html.forEach(element => {
+                    let values = `<tr id=${element._id}>
+                                    <td>${element.name}</td>
+                                    <td>${element.type}</td>
+                                    <td>${element.description}</td>
+                                    <td>${element.vendor}</td>
+                                    <td>${element.quantity}</td>
+                                 </tr>
+                        `;
+                    if (element.section == 'Software') {
+                        software += values;
+                    }else {
+                        hardware += values;
+                    };                    
+                });
+                console.log(software);
+                console.log(hardware);
+                result = body + software + hardware + `</tbody></table>`;
+                console.log(result);        
+
+                $("#resultable").append(result);
                 select_row();
             }
         });
     };
-    $.getJSONuncached("/get/stockitems")
+    $.getJSONuncached("/items")
 }
 
 function select_row()
@@ -20,27 +66,25 @@ function select_row()
 	{
        	$(".selected").removeClass("selected");
 		$(this).addClass("selected");
-		var section = $(this).prevAll("tr").children("td[colspan='6']").length - 1;
-        var item = $(this).attr("id") - 1;
-        delete_row(section, item);
+        var item = $(this).attr("id");
+        console.log(item);
+        //delete_row(item);
 	})
 };
 
-function delete_row(sec, item)
+function delete_row(item)
 {
 	$("#delete").click(function ()
 	{
 		$.ajax(
 		{
-			url: "/post/delete",
-			type: "POST",
-			data:
-			{
-				section: sec,
-				item: item,
-			},
+			url: `/item/${item}`,
+			type: "DELETE",
+			data: {},
 			cache: false,
-			success: setTimeout(draw_table, 1000)
+			success: function (json) {
+                location.reload(true);
+            }
 		})
 	})
 };

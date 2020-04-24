@@ -1,14 +1,16 @@
     
 var logger = require("morgan"),
-    http = require('http'),
     express = require('express'),
     http = require("http"),
-    express = require("express"),
+    cors = require("cors"),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
     path = require('path');
 
 require('dotenv').config();
+
+    // SANATAIZER
+const expAutoSan = require('express-autosanitizer');
 
 var app = express();
 var port = 3000;
@@ -16,8 +18,12 @@ var port = 3000;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('./routes/itemsRoutes'));
 app.use(express.static(path.resolve(__dirname, 'views')));
+
+// MOUNT SANATAIZER
+app.use(expAutoSan.all);
 
 app.get('/', (req, res) => {
     res.render('index');

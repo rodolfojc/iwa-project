@@ -47,15 +47,14 @@
 						<div class="col-sm-4 bg-dark">
 							<h2>Inventory - <b>New Stock Item</b></h2>
 							<button id="addnew" class="btn btn-block btn-primary">Add Item</button>
-							<form id="formhidden" style="display:none" enctype="application/json" action="/post/json"
-								method="post">
+							<form id="formhidden" style="display:none" action="/item"
+								method="POST">
 								<div class="form-row align-items-center">
 									<div class="col-auto">
                                         <br>
-										<select class="form-control mb-2" name="section_n">
-                                            <option value="0">Hardware</option>
-                                            <option value="1">Software</option>
-                                            <option value="2">Others</option>                        
+										<select class="form-control mb-2" name="section">
+                                            <option value="Hardware">Hardware</option>
+                                            <option value="Software">Software</option>                                                                  
                                         </select>
 									</div>
 									<div class="col-auto">
@@ -125,6 +124,7 @@
 	<script src="jquery/jquery.min.js"></script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/table.js"></script>
+    <script src="js/json2html.js"></script>
 
 </body>
 
