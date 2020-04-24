@@ -1,4 +1,3 @@
-
 function draw_table(){
     $("#resultable").empty();
     $.getJSONuncached = function(url) {
@@ -7,7 +6,6 @@ function draw_table(){
             type: 'GET',
             cache: false,
             success: function(html) {
-                console.log(html);
                 let result = '';
                 let body = `<table id="stocktable" class="table table-hover">
                             <thead>
@@ -70,7 +68,7 @@ function select_row()
 		$(this).addClass("selected");
         var item = $(this).attr("id");
         console.log(item);
-        delete_row(item);
+        //delete_row(item);
 	})
 };
 
@@ -84,7 +82,9 @@ function delete_row(item)
 			type: "DELETE",
 			data: {},
 			cache: false,
-			success: setTimeout(draw_table, 1000)
+			success: function (json) {
+                location.reload(true);
+            }
 		})
 	})
 };
