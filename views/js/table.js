@@ -39,6 +39,7 @@ function draw_table(){
                                     <td>${element.description}</td>
                                     <td>${element.vendor}</td>
                                     <td>${element.quantity}</td>
+                                    <td>$${element.cost}</td>
                                  </tr>
                         `;
                     if (element.section == 'Software') {
