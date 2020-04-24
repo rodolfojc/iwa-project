@@ -90,12 +90,43 @@ function delete_row(item)
 	})
 };
 
+function validateForm () {
+    };
+
 $(document).ready(function(){
     draw_table();
-})
+    //validateForm();
+});
+
+$(document).ready(function() {
+    console.log('Executed');
+    $("form[name='formadd']").validate({
+        rules: {
+            name: "required",
+            type: "required",
+            description: "required",
+            vendor: "required",
+            quantity: "required",
+            cost: "required"
+        },
+        messages: {
+            name: "Please enter a name for stock item",
+            type: "Please enter a type for stock item",
+            description: "Please enter a brief description of stock item",
+            vendor: "Please enter a provider or type N/A",
+            quantity: "Please, quantity must be a integer number up to 10000",
+            cost: "Please anter a cost or leave as 0 number up to $10000"
+        },
+        submitHandler: function(form) {
+        form.submit();
+    }
+    })
+});
 
 $(document).ready(function() {
     $("#addnew").click(function() {
 	$("#formhidden").toggle();
   })
 });
+
+

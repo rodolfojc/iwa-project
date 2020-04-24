@@ -48,7 +48,7 @@
 							<h2>Inventory - <b>New Stock Item</b></h2>
 							<button id="addnew" class="btn btn-block btn-primary">Add Item</button>
 							<form id="formhidden" style="display:none" action="/item"
-								method="POST">
+								method="POST" name="formadd">
 								<div class="form-row align-items-center">
 									<div class="col-auto">
                                         <br>
@@ -75,7 +75,7 @@
                                     </div>
 									<div class="col-auto">
 										<label class="sr-only" for="inlineFormInput">Quantity</label>
-										<input type="number" class="form-control mb-2" name= "quantity" placeholder="Quantity">
+										<input type="number" min="0" max="10000" class="form-control mb-2" name= "quantity" placeholder="Quantity">
                                     </div>
 									<div class="col-auto">
 										<label class="sr-only" for="inlineFormInput">Cost</label>
@@ -124,7 +124,9 @@
 	<script src="jquery/jquery.min.js"></script>
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/table.js"></script>
-    <script src="js/json2html.js"></script>
+    <script src="js/json2html.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    
 
 </body>
 
