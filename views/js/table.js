@@ -66,9 +66,10 @@ function select_row()
 	$("#stocktable tbody tr[id]").click(function ()
 	{
        	$(".selected").removeClass("selected");
-		$(this).addClass("selected");
-        var item = $(this).attr("id");
-        console.log(item);
+        $(this).addClass("selected");
+        $('#edit').prop('disabled', false);
+        $('#delete').prop('disabled', false);
+        var item = $(this).attr("id");       
         deleteItem(item);
         editItem(item);
 	})
@@ -93,6 +94,28 @@ function deleteItem(item)
 
 function editItem(item)
 {
+    $("form[name='formaddmodel']").validate({
+        rules: {
+            name: "required",
+            type: "required",
+            description: "required",
+            vendor: "required",
+            quantity: "required",
+            cost: "required"
+        },
+        messages: {
+            name: "Please enter a name for stock item",
+            type: "Please enter a type for stock item",
+            description: "Please enter a brief description of stock item",
+            vendor: "Please enter a provider or type N/A",
+            quantity: "Please, quantity must be a integer number up to 10000",
+            cost: "Please anter a cost or leave as 0 number up to $10000"
+        },
+        submitHandler: function(form) {
+        form.submit();
+    }
+    })
+
 	$("#edit").click(function ()
 	{
 		$.ajax(
@@ -115,15 +138,11 @@ function editItem(item)
     })   
 };
 
-function validateForm () {
-    };
-
 $(document).ready(function(){
     draw_table();
 });
 
 $(document).ready(function() {
-    console.log('Executed');
     $("form[name='formadd']").validate({
         rules: {
             name: "required",

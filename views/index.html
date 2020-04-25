@@ -45,7 +45,7 @@
 					<div class="row">
 						<div class="col-sm-4 bg-dark">
 							<h2>Inventory - <b>General</b></h2>
-							<button id="delete" class="btn btn-block btn-danger">Delete Item</button>							
+							<button id="delete" class="btn btn-block btn-danger" disabled>Delete Item</button>							
 							<p class="text-muted">To delete an Stock Item, select the Item first!!</p>
 						</div>
 						<div class="col-sm-4 bg-dark">
@@ -93,7 +93,7 @@
 						</div>
                         <div class="col-sm-4 bg-dark">
 							<h2>Stock Item - <b>Edit</b></h2>
-							<button id="edit" data-toggle="modal" data-target="#updateStock" class="btn btn-block btn-success">Edit Item</button>							
+							<button id="edit" data-toggle="modal" data-target="#updateStock" class="btn btn-block btn-success" disabled>Edit Item</button>							
 							<p class="text-muted">To delete an Stock Item, select the Item first!!</p>
 						</div>
 					</div>
@@ -107,7 +107,7 @@
         <div id="updateStock" class="modal fade">
 		    <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method = "POST" action = "/itemupdate" id="modelform">
+                    <form method = "POST" action = "/itemupdate" id="modelform" name="formaddmodel">
                         <div class="modal-header">
                             <h4 class="modal-title">EDIT - <b>Stock Item</b></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
