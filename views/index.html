@@ -107,7 +107,7 @@
         <div id="updateStock" class="modal fade">
 		    <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method = 'PUT' action = "/item" id="modelform">
+                    <form method = "POST" action = "/itemupdate" id="modelform">
                         <div class="modal-header">
                             <h4 class="modal-title">EDIT - <b>Stock Item</b></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -115,7 +115,7 @@
                         <div class="modal-body">
                             <div class="col-auto">
                                         <br>
-										<select class="form-control mb-2" name="section">
+										<select class="form-control mb-2" name="section" id= "sectionmodel">
                                             <option value="Hardware">Hardware</option>
                                             <option value="Software">Software</option>                                                                  
                                         </select>

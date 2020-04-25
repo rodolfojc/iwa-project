@@ -32,8 +32,8 @@ exports.updateItem = function(req, res) {
   Item.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, item) {
     if (err) {
       res.status(400).json(err);
-    } 
-    res.json(item);
+    }
+    res.redirect('back');
   }); 
 };
 

@@ -102,30 +102,17 @@ function editItem(item)
 			data: {},
 			cache: false,
 			success: function (json) {
+                $(".modal-body #sectionmodel").val(json.section);
                 $(".modal-body #namemodel").val(json.name);
                 $(".modal-body #typemodel").val(json.type);
                 $(".modal-body #descriptionmodel").val(json.description);
                 $(".modal-body #vendormodel").val(json.vendor);
                 $(".modal-body #quantitymodel").val(json.quantity);   
                 $(".modal-body #costmodel").val(json.cost);
-                $(".modal-content #modelform").attr("action", `/item/${item}`);                             
+                $(".modal-content #modelform").attr("action", `/itemupdate/${item}`);                             
             }
 		})
-    })
-
-    // $("#editSubmit").click(function () {
-    //     alert(item);
-    //     $.ajax(
-	// 	{
-	// 		url: `/item/${item}`,
-	// 		type: "PUT",
-	// 		data: {},
-	// 		cache: false,
-	// 		success: function (json) {                                         
-    //         }
-	// 	})
-    // });
-    
+    })   
 };
 
 function validateForm () {
