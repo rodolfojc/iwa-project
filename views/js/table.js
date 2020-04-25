@@ -1,11 +1,13 @@
-function draw_table(){
+
+// FUNCITION TO DRAW THE MAIN TABLE WITH AJAX CALL TO GET STOCK ITEMS
+function drawTable() {
     $("#resultable").empty();
-    $.getJSONuncached = function(url) {
+    $.getJSONuncached = function (url) {
         return $.ajax({
             url: url,
             type: 'GET',
             cache: false,
-            success: function(html) {
+            success: function (html) {
                 let result = '';
                 let body = `<table id="stocktable" class="table table-hover">
                             <thead>
@@ -44,56 +46,55 @@ function draw_table(){
                         `;
                     if (element.section == 'Software') {
                         software += values;
-                    }else {
+                    } else {
                         hardware += values;
-                    };                    
+                    };
                 });
                 console.log(software);
                 console.log(hardware);
                 result = body + software + hardware + `</tbody></table>`;
-                console.log(result);        
+                console.log(result);
 
                 $("#resultable").append(result);
-                select_row();
+                selectRow();
             }
         });
     };
     $.getJSONuncached("/items")
 }
 
-function select_row()
-{
-	$("#stocktable tbody tr[id]").click(function ()
-	{
-       	$(".selected").removeClass("selected");
+// FUNCTION TO SELECT A ROW FOR DELETING AND EDITING
+function selectRow() {
+    $("#stocktable tbody tr[id]").click(function () {
+        $(".selected").removeClass("selected");
         $(this).addClass("selected");
         $('#edit').prop('disabled', false);
         $('#delete').prop('disabled', false);
-        var item = $(this).attr("id");       
+        var item = $(this).attr("id");
         deleteItem(item);
         editItem(item);
-	})
+    })
 };
 
-function deleteItem(item)
-{
-	$("#deleteitem").click(function ()
-	{
-		$.ajax(
-		{
-			url: `/item/${item}`,
-			type: "DELETE",
-			data: {},
-			cache: false,
-			success: function (json) {
-                location.reload(true);
-            }
-		})
-	})
+// DELETE ITEM HANDLER
+function deleteItem(item) {
+    $("#deleteitem").click(function () {
+        $.ajax(
+            {
+                url: `/item/${item}`,
+                type: "DELETE",
+                data: {},
+                cache: false,
+                success: function (json) {
+                    location.reload(true);
+                }
+            })
+    })
 };
 
-function editItem(item)
-{
+// EDIT ITEM HANDLER
+function editItem(item) {
+    // INPUT VALIDATION FORM FOR INPUTS
     $("form[name='formaddmodel']").validate({
         rules: {
             name: "required",
@@ -111,38 +112,40 @@ function editItem(item)
             quantity: "Please, quantity must be a integer number up to 10000",
             cost: "Please anter a cost or leave as 0 number up to $10000"
         },
-        submitHandler: function(form) {
-        form.submit();
-    }
+        submitHandler: function (form) {
+            form.submit();
+        }
     })
 
-	$("#edit").click(function ()
-	{
-		$.ajax(
-		{
-			url: `/item/${item}`,
-			type: "GET",
-			data: {},
-			cache: false,
-			success: function (json) {
-                $(".modal-body #sectionmodel").val(json.section);
-                $(".modal-body #namemodel").val(json.name);
-                $(".modal-body #typemodel").val(json.type);
-                $(".modal-body #descriptionmodel").val(json.description);
-                $(".modal-body #vendormodel").val(json.vendor);
-                $(".modal-body #quantitymodel").val(json.quantity);   
-                $(".modal-body #costmodel").val(json.cost);
-                $(".modal-content #modelform").attr("action", `/itemupdate/${item}`);                             
-            }
-		})
-    })   
+    // FUNCTION TO POPULATE DATA ON MODAL FOR EDITING DATA
+    $("#edit").click(function () {
+        $.ajax(
+            {
+                url: `/item/${item}`,
+                type: "GET",
+                data: {},
+                cache: false,
+                success: function (json) {
+                    $(".modal-body #sectionmodel").val(json.section);
+                    $(".modal-body #namemodel").val(json.name);
+                    $(".modal-body #typemodel").val(json.type);
+                    $(".modal-body #descriptionmodel").val(json.description);
+                    $(".modal-body #vendormodel").val(json.vendor);
+                    $(".modal-body #quantitymodel").val(json.quantity);
+                    $(".modal-body #costmodel").val(json.cost);
+                    $(".modal-content #modelform").attr("action", `/itemupdate/${item}`);
+                }
+            })
+    })
 };
 
-$(document).ready(function(){
-    draw_table();
+// MAIN CALL
+$(document).ready(function () {
+    drawTable();
 });
 
-$(document).ready(function() {
+// INPUT VALIDATION FOR MAIN FORM - ADDING
+$(document).ready(function () {
     $("form[name='formadd']").validate({
         rules: {
             name: "required",
@@ -160,16 +163,17 @@ $(document).ready(function() {
             quantity: "Please, quantity must be a integer number up to 10000",
             cost: "Please anter a cost or leave as 0 number up to $10000"
         },
-        submitHandler: function(form) {
-        form.submit();
-    }
+        submitHandler: function (form) {
+            form.submit();
+        }
     })
 });
 
-$(document).ready(function() {
-    $("#addnew").click(function() {
-	$("#formhidden").toggle();
-  })
+// HIDE OR SHOW FORM FOR ADDING NEW ITEMS
+$(document).ready(function () {
+    $("#addnew").click(function () {
+        $("#formhidden").toggle();
+    })
 });
 
 

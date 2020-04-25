@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// MAIN MODELS FOR STOCK ITEMS 
 const itemsSchema = mongoose.Schema({
     section: {
         type: String,

@@ -7,6 +7,7 @@ var logger = require("morgan"),
     mongoose = require('mongoose'),
     path = require('path');
 
+// ENV VARIABLES
 require('dotenv').config();
 
 // SANATAIZER
@@ -15,6 +16,7 @@ const expAutoSan = require('express-autosanitizer');
 var app = express();
 var port = process.env.PORT || 3000;
 
+// BASIC CONFIGURATION
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,16 +26,18 @@ app.use(express.static(path.resolve(__dirname, 'views')));
 // MOUNT SANATAIZER
 app.use(expAutoSan.all);
 
+// MAIN CALL
 app.get('/', (req, res) => {
     res.render('index');
 });
 
+// LISTEN PORT
 app.listen(port, function(err){
     console.log("Listening on Port: " + port)
 });
 
+// MONGOOSE CONNECTION
 mongoose.connect(process.env.MONGODB_URL);
-//mongoose.connect(mongoInstance);
 mongoose.connection.on('error', (err) => { 
     console.log('Mongodb Error: ', err); 
     process.exit();

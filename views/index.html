@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-     <link href="css/inventory.css" rel="stylesheet">
+    <link href="css/inventory.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -114,40 +114,39 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
+                            <div class="col-auto"><br>                                       
+                                <select class="form-control mb-2" name="section" id= "sectionmodel">
+                                    <option value="Hardware">Hardware</option>
+                                    <option value="Software">Software</option>                                                                  
+                            </select>
+                            </div>
                             <div class="col-auto">
-                                        <br>
-										<select class="form-control mb-2" name="section" id= "sectionmodel">
-                                            <option value="Hardware">Hardware</option>
-                                            <option value="Software">Software</option>                                                                  
-                                        </select>
-									</div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Name</label>
-										<input type="text" class="form-control mb-2" id = "namemodel" name ="name" placeholder="Name">
-                                    </div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Type</label>
-										<input type="text" class="form-control mb-2" id= "typemodel" name ="type" placeholder="Type">
-                                    </div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Description</label>
-										<input type="text" class="form-control mb-2" id = "descriptionmodel" name="description" placeholder="Description">
-                                    </div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Provider</label>
-										<input type="text" class="form-control mb-2" id= "vendormodel" name = "vendor" placeholder="Vendor">
-                                    </div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Quantity</label>
-										<input type="number" min="0" max="10000" class="form-control mb-2" id= "quantitymodel" name= "quantity" placeholder="Quantity">
-                                    </div>
-									<div class="col-auto">
-										<label class="sr-only" for="inlineFormInput">Cost</label>
-										<input type="number" step="0.01" min="0" max="10000" class="form-control mb-2" id= "costmodel" name="cost" placeholder="Cost">
-                                    </div>
-									<div class="col-auto">
-										<button id="editSubmit" class="btn btn-block btn-success">Edit Item</button>
-									</div>                            	
+                                <label class="sr-only" for="inlineFormInput">Name</label>
+                                <input type="text" class="form-control mb-2" id = "namemodel" name ="name" placeholder="Name">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Type</label>
+                                <input type="text" class="form-control mb-2" id= "typemodel" name ="type" placeholder="Type">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Description</label>
+                                <input type="text" class="form-control mb-2" id = "descriptionmodel" name="description" placeholder="Description">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Provider</label>
+                                <input type="text" class="form-control mb-2" id= "vendormodel" name = "vendor" placeholder="Vendor">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Quantity</label>
+                                <input type="number" min="0" max="10000" class="form-control mb-2" id= "quantitymodel" name= "quantity" placeholder="Quantity">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Cost</label>
+                                <input type="number" step="0.01" min="0" max="10000" class="form-control mb-2" id= "costmodel" name="cost" placeholder="Cost">
+                            </div>
+                            <div class="col-auto">
+                                <button id="editSubmit" class="btn btn-block btn-success">Edit Item</button>
+                            </div>                            	
                         </div>
                     </form>
                 </div>
@@ -180,8 +179,7 @@
 	</script>
 	<script src="jquery/jquery.min.js"></script>
 	<script src="css/bootstrap.css"></script>
-	<script src="js/table.js"></script>
-    <script src="js/json2html.js"></script>    
+	<script src="js/table.js"></script>      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     
 
