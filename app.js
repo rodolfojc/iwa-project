@@ -18,7 +18,7 @@ var port = process.env.PORT || 3000;
 
 // BASIC CONFIGURATION
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '10kb'})); // PREVENTING DOS ATTACKS
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('./routes/itemsRoutes'));
 app.use(express.static(path.resolve(__dirname, 'views')));
