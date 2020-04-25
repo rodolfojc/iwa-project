@@ -93,19 +93,39 @@ function deleteItem(item)
 
 function editItem(item)
 {
-	$("#editSubmit").click(function ()
+	$("#edit").click(function ()
 	{
 		$.ajax(
 		{
 			url: `/item/${item}`,
-			type: "PUT",
+			type: "GET",
 			data: {},
 			cache: false,
 			success: function (json) {
-                location.reload(true);
+                $(".modal-body #namemodel").val(json.name);
+                $(".modal-body #typemodel").val(json.type);
+                $(".modal-body #descriptionmodel").val(json.description);
+                $(".modal-body #vendormodel").val(json.vendor);
+                $(".modal-body #quantitymodel").val(json.quantity);   
+                $(".modal-body #costmodel").val(json.cost);
+                $(".modal-content #modelform").attr("action", `/item/${item}`);                             
             }
 		})
-	})
+    })
+
+    // $("#editSubmit").click(function () {
+    //     alert(item);
+    //     $.ajax(
+	// 	{
+	// 		url: `/item/${item}`,
+	// 		type: "PUT",
+	// 		data: {},
+	// 		cache: false,
+	// 		success: function (json) {                                         
+    //         }
+	// 	})
+    // });
+    
 };
 
 function validateForm () {
