@@ -77,7 +77,7 @@ function select_row()
 
 function deleteItem(item)
 {
-	$("#delete").click(function ()
+	$("#deleteitem").click(function ()
 	{
 		$.ajax(
 		{

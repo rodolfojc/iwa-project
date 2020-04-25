@@ -36,7 +36,7 @@
 	<main role="main" class="container">
 		<div class="jumbotron jumbotron-fluid-center">
 			<div class="container">
-                <br><h3 class="display-5 text-center"><b>Stock Item Management</b></h3>
+                <br><h2 class="display-5 text-center"><b>Stock Items Management System</b></h2>
 			</div>
 		</div>
 		<div class="container bg-info">
@@ -45,7 +45,7 @@
 					<div class="row">
 						<div class="col-sm-4 bg-dark">
 							<h2>Inventory - <b>General</b></h2>
-							<button id="delete" class="btn btn-block btn-danger" disabled>Delete Item</button>							
+							<button id="delete" data-toggle="modal" data-target="#deleteconfirmation" class="btn btn-block btn-danger" disabled>Delete Item</button>							
 							<p class="text-muted">To delete an Stock Item, select the Item first!!</p>
 						</div>
 						<div class="col-sm-4 bg-dark">
@@ -53,7 +53,8 @@
 							<button id="addnew" class="btn btn-block btn-primary">Add Item</button>
 							<form id="formhidden" style="display:none" action="/item"
 								method="POST" name="formadd">
-								<div class="form-row align-items-center">
+								<div class="form-control align-items-center">
+                                <br>
 									<div class="col-auto">
                                         <br>
 										<select class="form-control mb-2" name="section">
@@ -152,7 +153,25 @@
                 </div>
 		    </div>
         </div>
-        
+        <!-- DELETE CONFIRMATION MODAL-->
+        <div id="deleteconfirmation" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete confirmation</h5>                                       
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to delete the selected Stock Item?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteitem" type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
 	</main>
 
 	<!-- Bootstrap core JavaScript -->
